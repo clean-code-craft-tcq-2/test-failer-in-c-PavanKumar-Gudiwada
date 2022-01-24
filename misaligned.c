@@ -10,8 +10,8 @@ const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 struct colorPair
 {
 	int pairNumber;
-	char* majorCol;
-	char* minorCol;
+	const char* majorCol;
+	const char* minorCol;
 }ColorPairs[NUMBER_OF_MAJOR_COLORS * NUMBER_OF_MINOR_COLORS];
 
 int formColorMap(){
