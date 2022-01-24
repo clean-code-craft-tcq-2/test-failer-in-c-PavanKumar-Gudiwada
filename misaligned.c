@@ -41,7 +41,7 @@ int formColorMap(){
 //    return i * j;
 //}
 
-int printColorMap() {
+void printColorMap() {
     int i = 0;
     for(i = 0; i < NUMBER_OF_MAJOR_COLORS * NUMBER_OF_MINOR_COLORS; i++) {
             printf("%d | %s | %s\n", ColorPairs[i].pairNumber, ColorPairs[i].majorCol, ColorPairs[i].minorCol);
