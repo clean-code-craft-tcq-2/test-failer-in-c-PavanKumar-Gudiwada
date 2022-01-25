@@ -15,13 +15,12 @@ struct colorPair
 }ColorPairs[NUMBER_OF_MAJOR_COLORS * NUMBER_OF_MINOR_COLORS];
 
 int formColorMap(){
-	int i = 0, j = 0, counter = 0;
+	int i = 0, j = 0;
 	for(i = 0; i < NUMBER_OF_MAJOR_COLORS; i++) {
         for(j = 0; j < NUMBER_OF_MINOR_COLORS; j++) {
-        	ColorPairs[counter].pairNumber = i * 5 + j;
-        	ColorPairs[counter].majorCol = majorColor[i];
-        	ColorPairs[counter].minorCol = minorColor[i];
-        	counter++;
+        	ColorPairs[(i * 5) + j].pairNumber = i * 5 + j;
+        	ColorPairs[(i * 5) + j].majorCol = majorColor[i];
+        	ColorPairs[(i * 5) + j].minorCol = minorColor[i];
         }
     }
     return i * j;
@@ -29,13 +28,12 @@ int formColorMap(){
 
 //function to generate correct mapping
 //int formColorMap(){
-//	int i = 0, j = 0, counter = 0;
+//	int i = 0, j = 0;
 //	for(i = 0; i < NUMBER_OF_MAJOR_COLORS; i++) {
 //        for(j = 0; j < NUMBER_OF_MINOR_COLORS; j++) {
-//        	ColorPairs[counter].pairNumber = counter+1;
-//        	ColorPairs[counter].majorCol = majorColor[i];
-//        	ColorPairs[counter].minorCol = minorColor[j];
-//        	counter++;
+//        	ColorPairs[(i * 5) + j].pairNumber = (i * 5) + j + 1;
+//        	ColorPairs[(i * 5) + j].majorCol = majorColor[i];
+//        	ColorPairs[(i * 5) + j].minorCol = minorColor[j];
 //        }
 //    }
 //    return i * j;
@@ -50,15 +48,14 @@ void printColorMap() {
 
 void testColorMap()
 {
-	int i=0, j=0, counter = 0;
+	int i=0, j=0;
 	for(i=0; i<NUMBER_OF_MAJOR_COLORS ;i++)
 	{
 		for(j=0 ; j<NUMBER_OF_MINOR_COLORS ; j++)
 		{
-			assert(ColorPairs[counter].pairNumber == counter+1);
-			assert(ColorPairs[counter].majorCol == majorColor[i]);
-			assert(ColorPairs[counter].minorCol == minorColor[j]);
-			counter++;
+			assert(ColorPairs[(i * 5) + j].pairNumber == (i * 5) + j + 1);
+			assert(ColorPairs[(i * 5) + j].majorCol == majorColor[i]);
+			assert(ColorPairs[(i * 5) + j].minorCol == minorColor[j]);
 		}
 	}
 }
