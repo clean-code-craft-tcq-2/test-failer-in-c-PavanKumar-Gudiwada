@@ -8,12 +8,13 @@ int alertFailureCount = 0;
 
 int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
-    if(celcius > MAX_TEMPERATURE)
-    	return 500;
-    else if(celcius < MIN_TEMPERATURE)
-    	return 500;
-    else if((celcius >= MIN_TEMPERATURE)&&(celcius <= MAX_TEMPERATURE))
+    if((celcius >= MIN_TEMPERATURE)&&(celcius <= MAX_TEMPERATURE))
+    {
     	return 200;
+    }else
+    {
+    	return 0;
+	}
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
