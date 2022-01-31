@@ -2,8 +2,9 @@
 #include <string.h>
 #include <assert.h>
 
+char sizeName[3] = "\0";
+
 char* size(int cms) {
-    char sizeName[3] = "\0";
     if((cms >= 36)&&(cms < 38)) {
         strcpy(sizeName, "S");
     } else if(cms >= 38 && cms < 40) {
